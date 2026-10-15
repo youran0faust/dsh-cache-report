@@ -1,0 +1,22 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Syntax check
+        run: |
+          node --check lib/report.mjs
+          node --check lib/index.js
+      - name: CLI runs (empty HOME is fine — it should report no data)
+        run: node lib/report.mjs help
+      - name: Package contents
+        run: npm pack --dry-run

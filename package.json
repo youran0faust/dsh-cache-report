@@ -1,0 +1,47 @@
+{
+  "name": "dsh-cache-report",
+  "version": "0.1.0",
+  "description": "DSH prompt-cache hit-rate and tool-block cost report: see where your tokens actually go, and which plugin changes cost you a full-context recompute.",
+  "type": "module",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./report": "./lib/report.mjs",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-cache-report": "./lib/report.mjs"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "runtime": "host",
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "smoke": "node lib/report.mjs help && node lib/report.mjs days 2"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "prompt-cache",
+    "cache-hit-rate",
+    "tokens",
+    "cost",
+    "observability"
+  ]
+}

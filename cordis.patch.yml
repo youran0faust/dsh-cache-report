@@ -1,0 +1,7 @@
+# dsh-cache-report bundle patch layer.
+# Declares this plugin's own loader entry; installable via `dsh plugin add`.
+# Registers slash commands only — no tools — so it never changes the tool
+# table and therefore never invalidates the prompt cache.
+- insert:
+    - id: cache-report
+      name: dsh-cache-report
