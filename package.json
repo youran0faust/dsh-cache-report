@@ -1,6 +1,6 @@
 {
   "name": "dsh-cache-report",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DSH prompt-cache hit-rate and tool-block cost report: see where your tokens actually go, and which plugin changes cost you a full-context recompute.",
   "type": "module",
   "license": "MIT",
@@ -19,6 +19,7 @@
     "cordis.patch.yml",
     "README.md",
     "README.en.md",
+    "MAINTAINING.md",
     "CHANGELOG.md",
     "LICENSE"
   ],

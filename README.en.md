@@ -1,5 +1,7 @@
 # dsh-cache-report
 
+[![CI](https://github.com/youran0faust/dsh-cache-report/actions/workflows/ci.yml/badge.svg)](https://github.com/youran0faust/dsh-cache-report/actions/workflows/ci.yml) ![node](https://img.shields.io/badge/node-%3E%3D22.15-brightgreen)
+
 > **Your hit rate fell from 96% to 80%. What ate it?**
 
 Prompt-cache hit rate and tool-block cost report for DSH (DeepSeek Harness). One command tells you where today's tokens went, which action cost the most, and which plugins are just taking up space.
@@ -56,6 +58,7 @@ Zero runtime dependencies — Node builtins only (`node:fs`, `node:path`, `node:
 | `/cache-report days 7` | daily trend table |
 | `/cache-report tools 30` | tool-block cost, per-plugin breakdown, never-called dead weight |
 | `/cache-report before-after 24` | tool-table change timeline, recompute cost, real ledger spend |
+| `/cache-report debug 7` | format self-check: does the DSH session format still match? |
 | `/cache-report help` | usage |
 
 Standalone equivalents: `node lib/report.mjs days 7`, and so on.

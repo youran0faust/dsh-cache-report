@@ -1,5 +1,7 @@
 # dsh-cache-report
 
+[![CI](https://github.com/youran0faust/dsh-cache-report/actions/workflows/ci.yml/badge.svg)](https://github.com/youran0faust/dsh-cache-report/actions/workflows/ci.yml) ![node](https://img.shields.io/badge/node-%3E%3D22.15-brightgreen)
+
 > **命中率从 96% 掉到 80%，是谁吃的？**
 
 DSH（DeepSeek Harness）提示缓存命中率与工具块成本报表。一条命令告诉你：今天的 token 花在哪、哪次操作最贵、哪个插件在占位。
@@ -56,6 +58,7 @@ node dsh-cache-report/lib/report.mjs today
 | `/cache-report days 7` | 近 7 天趋势表 |
 | `/cache-report tools 30` | 工具块成本 / 按插件拆分 / 从未被调用的死重 |
 | `/cache-report before-after 24` | 近 24 小时：工具表变化时间线 + 重算代价 + 真实台账花费 |
+| `/cache-report debug 7` | 格式自检：DSH 会话格式是否仍符合预期 |
 | `/cache-report help` | 用法 |
 
 独立脚本用法相同：`node lib/report.mjs days 7`。
